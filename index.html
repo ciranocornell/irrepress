@@ -1,80 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Q-MASON — Coming Soon</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <!-- Body copy in Roboto -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      min-height: 100vh;
-      background: url('background.jpg') no-repeat center center fixed; /* 👈 replace with your exact file name */
-      background-size: cover;
+    :root{
+      --orange:#F3461E;
+      --navy:#111731;
+      --ink:#ffffff;
+    }
+
+    /* Page background — use your actual filename here */
+    body{
+      margin:0;
+      min-height:100dvh;                 /* better than 100vh on mobile */
+      background: url('background.jpg') center/cover fixed no-repeat;  /* <- match the exact name */
       font-family: 'Roboto', Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: white;
-      padding: 20px;
+      color: var(--ink);
+      overflow:auto;                     /* allow scroll if content is tall */
     }
 
-    h1 {
-      color: #000000; /* Black headline */
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 15px;
-      text-shadow: 1px 1px 4px rgba(255,255,255,0.6); /* optional lift */
+    /* Layout: safe spacing so nothing is cut */
+    .main{
+      max-width:1100px;
+      margin:10vh auto 8vh;              /* top/bottom breathing room */
+      padding:0 24px;
+      text-align:center;
     }
 
-    p {
-      margin: 10px 0;
-      font-size: 1.1rem;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.6); /* readability on image */
+    /* Headline in Helvetica Bold */
+    h1{
+      font-family: "Helvetica Neue", Helvetica, Arial, system-ui, -apple-system, sans-serif;
+      font-weight: 700;                   /* Bold */
+      color:#000;                         /* Black per your request */
+      line-height:1.1;
+      margin:0 0 18px;
+      /* responsive size: never too huge or tiny */
+      font-size: clamp(1.8rem, 4.6vw + .2rem, 3.2rem);
+      text-wrap: balance;
+      text-shadow: 0 1px 2px rgba(255,255,255,.5); /* subtle lift on busy bg */
     }
 
-    .logo img {
-      max-width: 300px;
-      width: 90%;
-      margin: 20px 0;
+    .eyebrow{
+      margin:8px 0 16px;
+      opacity:.95;
     }
 
-    .form {
-      margin-top: 25px;
+    .logo img{
+      max-width:320px;
+      width:80%;
+      height:auto;
+      margin:18px 0 6px;
+      display:inline-block;
     }
 
-    .form input {
-      padding: 12px;
-      border-radius: 25px;
-      border: none;
-      width: 250px;
-      max-width: 80%;
+    p{
+      margin:10px 0;
+      font-size: clamp(1rem, .4vw + .95rem, 1.15rem);
+      line-height:1.6;
+      text-shadow: 0 1px 2px rgba(0,0,0,.45); /* improves readability on photo */
+      overflow-wrap:anywhere;
     }
 
-    .form button {
-      padding: 12px 20px;
-      border-radius: 25px;
-      border: none;
-      background: #111731;   /* Dark Blue */
-      color: #fff;
-      font-weight: 700;
-      cursor: pointer;
-      margin-left: 10px;
+    .form{
+      margin-top:22px;
+      display:flex;
+      gap:12px;
+      justify-content:center;
+      flex-wrap:wrap;
     }
+    .input{
+      padding:12px 16px;
+      border-radius:999px;
+      border:none;
+      width:min(520px, 80vw);
+      background:rgba(255,255,255,.9);
+      color:#111;
+      font-size:1rem;
+      box-shadow:0 2px 6px rgba(0,0,0,.15);
+      outline:none;
+    }
+    .btn{
+      padding:12px 18px;
+      border-radius:999px;
+      border:none;
+      background:var(--navy);
+      color:#fff;
+      font-weight:700;
+      cursor:pointer;
+      box-shadow:0 2px 6px rgba(0,0,0,.2);
+    }
+    .btn:hover{ background:var(--orange); }
 
-    .form button:hover {
-      background: #F3461E; /* Orange hover */
+    /* Small screens: add extra bottom room so nothing feels cut */
+    @media (max-width: 640px){
+      .main{ margin: 8vh auto 12vh; }
     }
   </style>
 </head>
 <body>
-  <div class="content">
-    <h1>For the first time in India,<br>a rethink on how construction<br>should be done.</h1>
-    <p>Coming Soon from Irrepress Labs..</p>
+  <main class="main">
+    <h1>For the first time in India,<br/>a rethink on how construction<br/>should be done.</h1>
+
+    <div class="eyebrow">Coming Soon from Irrepress Labs..</div>
+
     <div class="logo">
-      <img src="qmason-logo-white.jpg" alt="Q-MASON Logo">
+      <img src="qmason-logo-white.jpg" alt="Q-MASON logo">
     </div>
+
     <p>Robots at the frontier of innovation. Next-generation machines for tomorrow's builds.</p>
     <p>Delivering precision and speed beyond imagination. One robot, many trades.</p>
-    <p>Endless possibilities d
+    <p>Endless possibilities driving projects to completion at record speed.</p>
+
+    <form class="form" onsubmit="event.preventDefault(); alert('Thanks! We\'ll notify you.'); this.reset();">
+      <input class="input" type="email" placeholder="Your e-mail" required>
+      <button class="btn" type="submit">NOTIFY ME</button>
+    </form>
+  </main>
+</body>
+</html>
