@@ -1,78 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Q-MASON — Coming Soon | Irrepress Labs</title>
-  <meta name="description" content="Q-MASON: Next-generation construction robots from Irrepress Labs. Quality. Quick." />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q-MASON — Coming Soon</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
-    body{
-      margin:0;
-      font-family:'Roboto', sans-serif;
-      color:#fff;
-      background:#0b1524 url('background.jpg') center/cover fixed no-repeat;
-      text-align:center;
+    body {
+      margin: 0;
+      height: 100vh;
+      background: url('QMason LP image.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Roboto', Arial, sans-serif;
     }
-    .content{
-      position:relative;
-      z-index:1;
-      padding:5% 10%;
+
+    .overlay {
+      height: 100%;
+      width: 100%;
+      background: rgba(17, 23, 49, 0.75); /* Blue overlay */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 20px;
     }
-    h1{
-      font-family:Helvetica, Arial, sans-serif;
-      font-weight:bold;
-      color:#F3461E;
-      font-size:2.7rem;
-      margin-bottom:20px;
+
+    h1 {
+      color: #F3461E; /* Orange headline */
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 15px;
     }
-    .logo img{
-      max-width:340px;
-      width:85%;
-      height:auto;
-      margin:20px 0;
+
+    p {
+      margin: 10px 0;
+      font-size: 1.1rem;
     }
-    .blurb{
-      max-width:700px;
-      margin:10px auto;
-      font-size:1.1rem;
-      line-height:1.5;
+
+    .logo img {
+      max-width: 300px;
+      width: 90%;
+      margin: 20px 0;
     }
-    .form{
-      margin-top:25px;
+
+    .form {
+      margin-top: 25px;
     }
-    .form input{
-      padding:12px;
-      border-radius:25px;
-      border:none;
-      width:250px;
-      max-width:80%;
+
+    .form input {
+      padding: 12px;
+      border-radius: 25px;
+      border: none;
+      width: 250px;
+      max-width: 80%;
     }
-    .form button{
-      padding:12px 18px;
-      border-radius:25px;
-      border:none;
-      background:#F3461E;
-      color:#fff;
-      font-weight:700;
-      cursor:pointer;
-      margin-left:10px;
+
+    .form button {
+      padding: 12px 20px;
+      border-radius: 25px;
+      border: none;
+      background: #F3461E;
+      color: #fff;
+      font-weight: 700;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    .form button:hover {
+      background: #d53d14;
     }
   </style>
 </head>
 <body>
-  <div class="content">
-    <h1>For the first time in India,<br/>a rethink on how construction<br/>should be done.</h1>
-    <p>Coming Soon from Irrepress Labs..</p>
-    <div class="logo">
-      <img src="qmason-logo-white.jpg" alt="Q-MASON Logo" />
-    </div>
-    <p class="blurb">Robots at the frontier of innovation. Next-generation machines for tomorrow's builds.</p>
-    <p class="blurb">Delivering precision and speed beyond imagination. One robot, many trades.</p>
-    <p class="blurb">Endless possibilities driving projects to completion at record speed.</p>
-    <div class="form">
-      <input type="email" placeholder="Your e-mail" required />
-      <button>NOTIFY ME</button>
+  <div class="overlay">
+    <div class="content">
+      <h1>For the first time in India,<br>a rethink on how construction<br>should be done.</h1>
+      <p>Coming Soon from Irrepress Labs..</p>
+      <div class="logo">
+        <img src="qmason-logo-white.jpg" alt="Q-MASON Logo">
+      </div>
+      <p>Robots at the frontier of innovation. Next-generation machines for tomorrow's builds.</p>
+      <p>Delivering precision and speed beyond imagination. One robot, many trades.</p>
+      <p>Endless possibilities driving projects to completion at record speed.</p>
+      <div class="form">
+        <input type="email" placeholder="Your e-mail" required>
+        <button>NOTIFY ME</button>
+      </div>
     </div>
   </div>
 </body>
