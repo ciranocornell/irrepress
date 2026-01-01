@@ -1,124 +1,317 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Q-MASON — Coming Soon</title>
-  <!-- Body copy in Roboto -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --orange:#F3461E;
-      --navy:#111731;
-      --ink:#ffffff;
-    }
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Irrepress Labs — Q-Mason</title>
 
-    /* Page background — use your actual filename here */
-    body{
-      margin:0;
-      min-height:100dvh;                 /* better than 100vh on mobile */
-      background: url('background.jpg') center/cover fixed no-repeat;  /* <- match the exact name */
-      font-family: 'Roboto', Arial, sans-serif;
-      color: var(--ink);
-      overflow:auto;                     /* allow scroll if content is tall */
-    }
+<style>
+:root{
+  --accent:#F3461E;
+  --ink:#1F2937;
+  --muted:#6B7280;
+  --bg:#fbf7f7;
+  --line:#E5E7EB;
+  --radius:16px;
+  --shadow:0 10px 30px rgba(0,0,0,.06);
+  --max:1100px;
+  --sans: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+}
 
-    /* Layout: safe spacing so nothing is cut */
-    .main{
-      max-width:1100px;
-      margin:10vh auto 8vh;              /* top/bottom breathing room */
-      padding:0 24px;
-      text-align:center;
-    }
+*{ box-sizing:border-box; }
 
-    /* Headline in Helvetica Bold */
-    h1{
-      font-family: "Helvetica Neue", Helvetica, Arial, system-ui, -apple-system, sans-serif;
-      font-weight: 700;                   /* Bold */
-      color:#000;                         /* Black per your request */
-      line-height:1.1;
-      margin:0 0 18px;
-      /* responsive size: never too huge or tiny */
-      font-size: clamp(1.8rem, 4.6vw + .2rem, 3.2rem);
-      text-wrap: balance;
-      text-shadow: 0 1px 2px rgba(255,255,255,.5); /* subtle lift on busy bg */
-    }
+body{
+  margin:0;
+  font-family:var(--sans);
+  color:var(--ink);
+  background:
+    radial-gradient(1100px 520px at 50% 18%, rgba(243,70,30,.08), transparent 60%),
+    linear-gradient(#ffffff, var(--bg));
+}
 
-    .eyebrow{
-      margin:8px 0 16px;
-      opacity:.95;
-    }
+.container{
+  width:min(var(--max), 92vw);
+  margin:0 auto;
+}
 
-    .logo img{
-      max-width:320px;
-      width:80%;
-      height:auto;
-      margin:18px 0 6px;
-      display:inline-block;
-    }
+/* ───────── HEADER ───────── */
+header{
+  padding:14px 0 0;
+}
 
-    p{
-      margin:10px 0;
-      font-size: clamp(1rem, .4vw + .95rem, 1.15rem);
-      line-height:1.6;
-      text-shadow: 0 1px 2px rgba(0,0,0,.45); /* improves readability on photo */
-      overflow-wrap:anywhere;
-    }
+.header-row{
+  display:flex;
+  justify-content:flex-start;
+}
 
-    .form{
-      margin-top:22px;
-      display:flex;
-      gap:12px;
-      justify-content:center;
-      flex-wrap:wrap;
-    }
-    .input{
-      padding:12px 16px;
-      border-radius:999px;
-      border:none;
-      width:min(520px, 80vw);
-      background:rgba(255,255,255,.9);
-      color:#111;
-      font-size:1rem;
-      box-shadow:0 2px 6px rgba(0,0,0,.15);
-      outline:none;
-    }
-    .btn{
-      padding:12px 18px;
-      border-radius:999px;
-      border:none;
-      background:var(--navy);
-      color:#fff;
-      font-weight:700;
-      cursor:pointer;
-      box-shadow:0 2px 6px rgba(0,0,0,.2);
-    }
-    .btn:hover{ background:var(--orange); }
+.logo-il{
+  height:42px;
+  width:auto;
+}
 
-    /* Small screens: add extra bottom room so nothing feels cut */
-    @media (max-width: 640px){
-      .main{ margin: 8vh auto 12vh; }
-    }
-  </style>
+/* ───────── HERO ───────── */
+.hero{
+  text-align:center;
+  padding:0 0 28px; /* zero top padding */
+}
+
+/* 🔥 Q-MASON — VERY BIG */
+.logo-qmason{
+  height:340px;          /* ⬅️ BIGGER THAN BEFORE */
+  width:auto;
+  display:block;
+  margin:12px auto 6px; /* visually attached to headline */
+}
+
+/* 🔽 Headline deliberately restrained */
+.hero h1{
+  font-size:clamp(30px, 3.8vw, 48px);
+  line-height:1.08;
+  margin:0 0 12px;
+  letter-spacing:-0.035em;
+}
+
+.hero h1 span{
+  color:var(--accent);
+}
+
+.hero p{
+  max-width:860px;
+  margin:0 auto;
+  color:var(--muted);
+  font-size:14.5px;
+  line-height:1.6;
+}
+
+/* ───────── BENEFITS ───────── */
+.benefits{
+  margin-top:14px;
+  display:flex;
+  justify-content:center;
+  gap:22px;
+  flex-wrap:wrap;
+  font-weight:600;
+  font-size:14px;
+}
+
+.benefits span{
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.check{
+  width:16px;
+  height:16px;
+  border-radius:50%;
+  border:2px solid var(--accent);
+  color:var(--accent);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:11px;
+}
+
+/* ───────── SECTION ───────── */
+section{
+  padding:30px 0 64px;
+}
+
+h2{
+  text-align:center;
+  font-size:clamp(20px, 2.2vw, 28px);
+  margin-bottom:8px;
+  letter-spacing:-0.02em;
+}
+
+.section-desc{
+  text-align:center;
+  max-width:740px;
+  margin:0 auto 26px;
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* ───────── CARDS ───────── */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+
+.card-top{
+  padding:16px;
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+.num{
+  color:var(--accent);
+  font-weight:900;
+  font-size:18px;
+}
+
+.card h3{
+  margin:0;
+  font-size:16.5px;
+}
+
+.img-block{
+  height:140px;
+  width:100%;
+  object-fit:contain;
+  padding:12px;
+  background:rgba(243,70,30,.04);
+  border-top:1px dashed var(--line);
+  border-bottom:1px dashed var(--line);
+}
+
+.card p{
+  padding:16px;
+  margin:0;
+  font-size:14px;
+  color:var(--muted);
+  line-height:1.55;
+}
+
+/* ───────── FOOTER ───────── */
+footer{
+  border-top:1px solid var(--line);
+  background:#fff;
+  padding:26px 0 36px;
+  text-align:center;
+}
+
+.logo-il-footer{
+  height:46px;
+  width:auto;
+  margin-bottom:10px;
+}
+
+.contact{
+  font-weight:700;
+  margin-top:6px;
+}
+
+.copyright{
+  font-size:12px;
+  color:#777;
+  margin-top:6px;
+}
+
+/* ───────── MOBILE ───────── */
+@media(max-width:900px){
+  .grid{ grid-template-columns:1fr; }
+
+  .logo-qmason{
+    height:220px; /* still big on mobile */
+    margin:10px auto 6px;
+  }
+
+  .hero h1{
+    font-size:30px;
+  }
+
+  .logo-il{ height:38px; }
+}
+</style>
 </head>
+
 <body>
-  <main class="main">
-    <h1>For the first time in India,<br/>a rethink on how construction<br/>should be done.</h1>
 
-    <div class="eyebrow">Coming Soon from Irrepress Labs..</div>
+<header>
+  <div class="container header-row">
+    <img src="Irrepresslabs_logo.png" alt="Irrepress Labs" class="logo-il">
+  </div>
+</header>
 
-    <div class="logo">
-      <img src="qmason-logo-white.jpg" alt="Q-MASON logo">
+<section class="hero">
+  <div class="container">
+
+    <img src="Q-Mason-Logo.png" alt="Q-Mason" class="logo-qmason">
+
+    <h1>
+      Revolutionizing <span>Construction</span><br>
+      with <span>Robotics</span>
+    </h1>
+
+    <p>
+      Q-Mason (QM1) is a multi-trade robotic system that automates interior finishing —
+      from concrete surface grinding to gypsum plastering, putty application,
+      and internal painting.
+    </p>
+
+    <div class="benefits">
+      <span><div class="check">✓</div> Faster execution</span>
+      <span><div class="check">✓</div> Higher finish consistency</span>
+      <span><div class="check">✓</div> Measurable QA</span>
     </div>
 
-    <p>Robots at the frontier of innovation. Next-generation machines for tomorrow's builds.</p>
-    <p>Delivering precision and speed beyond imagination. One robot, many trades.</p>
-    <p>Endless possibilities driving projects to completion at record speed.</p>
+  </div>
+</section>
 
-    <form class="form" onsubmit="event.preventDefault(); alert('Thanks! We\'ll notify you.'); this.reset();">
-      <input class="input" type="email" placeholder="Your e-mail" required>
-      <button class="btn" type="submit">NOTIFY ME</button>
-    </form>
-  </main>
+<section>
+  <div class="container">
+
+    <h2>Our Revolutionary Solution</h2>
+    <p class="section-desc">
+      A streamlined automation platform built for predictable, repeatable,
+      high-quality interior finishing at scale.
+    </p>
+
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-top">
+          <div class="num">01</div>
+          <h3>Faster Execution</h3>
+        </div>
+        <img src="Faster.png" class="img-block" alt="Faster Execution">
+        <p>Repeatable machine workflows reduce variability and accelerate finishing cycles.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="num">02</div>
+          <h3>Precision & Consistency</h3>
+        </div>
+        <img src="Precesion.png" class="img-block" alt="Precision & Consistency">
+        <p>Controlled application ensures consistent finish quality and measurable QA.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <div class="num">03</div>
+          <h3>End-to-End Automation</h3>
+        </div>
+        <img src="Automation-End.png" class="img-block" alt="End-to-End Automation">
+        <p>One robotic platform performing multiple interior finishing tasks seamlessly.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <img src="Irrepresslabs_logo.png" alt="Irrepress Labs" class="logo-il-footer">
+  <div class="contact">sales@irrepresslabs.in</div>
+  <div class="copyright">
+    © <span id="year"></span> Irrepress Labs. All rights reserved.
+  </div>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
